@@ -1,8 +1,8 @@
 const camera = document.querySelector("#camera");
 const constraints = {
   video: {
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: window.outerWidth,
+    height: window.outerHeight,
   },
 };
 async function init() {
