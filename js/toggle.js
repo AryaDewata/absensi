@@ -5,9 +5,11 @@ let hidden = true;
 togglePasswordBtn.addEventListener("click", function () {
   if (hidden) {
     PIN.type = "text";
+    togglePasswordBtn.innerHTML = '<i class="fas fa-eye"></i>';
     hidden = false;
   } else {
     PIN.type = "password";
+    togglePasswordBtn.innerHTML = '<i class="fas fa-eye-slash"></i>';
     hidden = true;
   }
 });

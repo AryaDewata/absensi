@@ -6,13 +6,19 @@
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
     <!-- Title -->
     <title>Layout</title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://img.icons8.com/clouds/512/todo-list.png" type="image/x-icon">
+
     <!-- Style -->
     <link rel="stylesheet" href="css/index.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 </head>
 
@@ -32,12 +38,14 @@
         <form action="camera.html">
 
             <div class="textfield">
-                <input type="text" id="nis" placeholder="Nomor Induk Siswa" maxlength="4" autocomplete="off" autofocus>
+                <input type="text" id="nis" placeholder="Nomor Induk Siswa" autocomplete="off" autofocus>
             </div>
 
             <div class="textfield">
                 <input type="password" id="pin" placeholder="PIN" autocomplete="off" autocapitalize="false">
-                <div class="toggle-password"></div>
+                <div class="toggle-password">
+                    <i class="fas fa-eye-slash"></i>
+                </div>
             </div>
 
             <a href="#">Lupa nomor induk / PIN ?</a>
