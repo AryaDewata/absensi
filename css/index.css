@@ -1,0 +1,136 @@
+/* 
+<========= Google Fonts =========>
+*/
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+/* 
+<========= Documents =========>
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: "Quicksand", "Nunito";
+}
+
+/* 
+<========= Body =========>
+*/
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+<========= Container =========>
+*/
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 
+<========= Header =========>
+*/
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6.2px;
+
+  color: #666666;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+header img {
+  width: 106px;
+}
+
+/* 
+<========= Form =========>
+*/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+form a {
+  outline: none;
+
+  color: #005695;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: right;
+  text-decoration: none;
+}
+form a:hover,
+form a:active,
+form a:focus {
+  color: #0065ad;
+}
+.textfield {
+  overflow: hidden;
+
+  display: flex;
+  border-radius: 6px;
+  border: 1px solid #666666;
+}
+input {
+  padding: 12px;
+  width: 328px;
+
+  border: none;
+  outline: none;
+
+  color: #666666;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2.2px;
+}
+input::placeholder {
+  opacity: 85%;
+  letter-spacing: 0.6px;
+}
+.toggle-password {
+  width: 20%;
+  background: rgb(230, 230, 230);
+}
+.btn {
+  padding: 12px 0;
+
+  border: 0;
+  border-radius: 6px;
+  background: #005695;
+  outline: none;
+
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+}
+.btn:hover,
+.btn:focus,
+.btn:active {
+  background: #0065ad;
+}
+
+/* 
+<========= Footer =========>
+*/
+footer {
+  position: absolute;
+  bottom: 28px;
+
+  color: #666666;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.4px;
+}
