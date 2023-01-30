@@ -9,9 +9,9 @@ let constraints = {
   },
 };
 
-async function init(constraints) {
+async function init() {
   try {
-    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    let stream = await navigator.mediaDevices.getUserMedia(constraints);
     handleSuccess(stream);
   } catch (err) {
     console.log(err);
@@ -23,7 +23,7 @@ function handleSuccess(stream) {
   camera.srcObject = stream;
 }
 
-init(constraints);
+init();
 
 // Facing mode
 const facingBtn = document.querySelector("#facing-btn");
@@ -35,5 +35,5 @@ facingBtn.addEventListener("click", function () {
     constraints.video.facingMode.exact = "environment";
     camera.style.transform = "scaleX(1)";
   }
-  init(constraints);
+  init();
 });
