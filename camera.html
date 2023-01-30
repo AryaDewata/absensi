@@ -30,12 +30,45 @@
         <!-- Camera -->
         <video id="camera" playsinline autoplay></video>
 
+        <!-- Back Button -->
+        <a href="index.html">
+            <i class="fas fa-arrow-left back-btn"></i>
+        </a>
+
         <!-- Action Button -->
-        <section id="action">
-            <i class="fas fa-camera-rotate btn" id="facing-btn"></i>
-            <i class="fas fa-camera btn"></i>
-            <i class="fas fa-image btn"></i>
+        <section id="action-menu">
+            <i class="fas fa-camera btn" id="snapshot-btn"></i>
+            <i class="fas fa-user btn" id="profile-toggle"></i>
         </section>
+
+        <!-- Snapshot Popups -->
+        <div class="snapshot-wrapper">
+            <div class="card">
+                <canvas id="snapshot-result" height="720" width="1280"></canvas>
+                <h3>Lanjutkan ?</h3>
+                <div class="option">
+                    <button id="close-btn">Ambil Ulang Gambar</button>
+                    <button>Lanjutkan</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student Profile Popups -->
+        <div class="profile-wrapper">
+            <div class="profile">
+                <div class="picture">
+                    <img src="https://cdn-image.hipwee.com/wp-content/uploads/2020/04/hipwee-cara-menjadi-selebgram.jpg"
+                        alt="">
+                </div>
+                <div class="detail">
+                    <p>NIS : 666</p>
+                    <p>Nama : Christina</p>
+                    <p>Kelas : XI</p>
+                    <p>Jurusan : Rekayasa Perangkat Lunak</p>
+                </div>
+            </div>
+            <p>Klik pada layar untuk kembali</p>
+        </div>
 
     </div>
 

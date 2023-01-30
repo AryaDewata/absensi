@@ -1,3 +1,4 @@
+// Camera Stream
 const camera = document.querySelector("#camera");
 let constraints = {
   video: {
@@ -8,32 +9,38 @@ let constraints = {
     },
   },
 };
-
 async function init() {
-  try {
-    let stream = await navigator.mediaDevices.getUserMedia(constraints);
-    handleSuccess(stream);
-  } catch (err) {
-    console.log(err);
-  }
+  let stream = await navigator.mediaDevices.getUserMedia(constraints);
+  handleSuccess(stream);
 }
-
 function handleSuccess(stream) {
   window.stream = stream;
   camera.srcObject = stream;
 }
-
 init();
 
-// Facing mode
-const facingBtn = document.querySelector("#facing-btn");
-facingBtn.addEventListener("click", function () {
-  if (constraints.video.facingMode.exact != "user") {
-    constraints.video.facingMode.exact = "user";
-    camera.style.transform = "scaleX(-1)";
-  } else {
-    constraints.video.facingMode.exact = "environment";
-    camera.style.transform = "scaleX(1)";
-  }
-  init();
+// Snapshot
+const snapshotBtn = document.querySelector("#snapshot-btn");
+const snapshotWrapper = document.querySelector(".snapshot-wrapper");
+const result = document.querySelector("#snapshot-result");
+let context = result.getContext("2d");
+snapshotBtn.addEventListener("click", function () {
+  context.drawImage(camera, 0, 0, camera.videoWidth, camera.videoHeight);
+  snapshotWrapper.style.display = "flex";
+});
+// Close Snapshot Result
+const closeBtn = document.querySelector("#close-btn");
+closeBtn.addEventListener("click", function () {
+  snapshotWrapper.style.display = "none";
+});
+
+// Profile Toggle
+const profileBtn = document.querySelector("#profile-toggle");
+const profileWrapper = document.querySelector(".profile-wrapper");
+
+profileBtn.addEventListener("click", function () {
+  profileWrapper.style.display = "flex";
+});
+profileWrapper.addEventListener("click", function () {
+  this.style.display = "none";
 });
