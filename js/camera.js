@@ -32,7 +32,7 @@ facingBtn.addEventListener("click", function () {
     constraints.video.facingMode.exact = "user";
     camera.style.transform = "scaleX(-1)";
   } else {
-    constraints.video.facingMode.exact = "enviroment";
+    constraints.video.facingMode.exact = "environment";
     camera.style.transform = "scaleX(1)";
   }
   init();
