@@ -64,17 +64,3 @@ body {
   color: #005595;
   font-size: 74px;
 }
-
-/* 
-<========= Flash =========>
-*/
-.flash {
-  position: fixed;
-  top: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background: white;
-  opacity: 0%;
-}

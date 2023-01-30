@@ -1,11 +1,15 @@
 const camera = document.querySelector("#camera");
-const constraints = {
+let constraints = {
   video: {
     width: window.innerWidth,
     height: window.innerHeight,
+    facingMode: {
+      exact: "user",
+    },
   },
 };
-async function init() {
+
+async function init(constraints) {
   try {
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     handleSuccess(stream);
@@ -19,4 +23,12 @@ function handleSuccess(stream) {
   camera.srcObject = stream;
 }
 
-init();
+init(constraints);
+
+// Facing mode
+const facingBtn = document.querySelector("#facing-btn");
+facingBtn.addEventListener("click", function () {
+  if (constraints.video.facingMode.exact == "user") constraints.video.facingMode.exact = "environment";
+  else constraints.video.facingMode.exact = "user";
+  init(constraints);
+});
