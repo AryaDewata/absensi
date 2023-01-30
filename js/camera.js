@@ -28,7 +28,14 @@ init(constraints);
 // Facing mode
 const facingBtn = document.querySelector("#facing-btn");
 facingBtn.addEventListener("click", function () {
-  if (constraints.video.facingMode.exact == "user") constraints.video.facingMode.exact = "environment";
-  else constraints.video.facingMode.exact = "user";
+  if (constraints.video.facingMode.exact) {
+    constraints.video.facingMode = "user";
+    camera.style.transform = "scaleX(-1)";
+  } else {
+    constraints.video.facingMode = {
+      exact: "environment",
+    };
+    camera.style.transform = "scaleX(1)";
+  }
   init(constraints);
 });
