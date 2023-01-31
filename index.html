@@ -40,6 +40,7 @@
             <div class="textfield">
                 <input type="text" id="nis" placeholder="Nomor Induk Siswa" autocomplete="off" autofocus>
             </div>
+            <p class="alert">* Nomor induk siswa tidak ditemukan!</p>
 
             <div class="textfield">
                 <input type="password" id="pin" placeholder="PIN" autocomplete="off" autocapitalize="false">
@@ -47,12 +48,22 @@
                     <i class="fas fa-eye-slash"></i>
                 </div>
             </div>
+            <p class="alert">* PIN yang anda masukkan salah!</p>
 
-            <a href="#">Lupa nomor induk / PIN ?</a>
+            <p class="helper-toggle">Lupa nomor induk / PIN ?</p>
 
             <button class="btn">Masuk</button>
 
         </form>
+
+        <!-- Popups -->
+        <div class="popups-wrapper">
+            <div class="card">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>Jika lupa dengan NIS atau PIN anda, silakan hubungi pihak sekolah!</p>
+            </div>
+            <h3>Klik pada layar untuk kembali</h3>
+        </div>
 
     </div>
 

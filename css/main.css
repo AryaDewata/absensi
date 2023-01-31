@@ -1,0 +1,64 @@
+/* 
+<========= Google Fonts =========>
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* 
+<========= Documents =========>
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: "Poppins";
+}
+
+/* 
+<========= Body =========>
+*/
+body {
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+/* 
+<========= Container =========>
+*/
+.container {
+  padding: 16px;
+  margin: 0 auto;
+  width: 90%;
+}
+h3,
+h4 {
+  color: #666666;
+  font-size: 22px;
+  letter-spacing: 1.2px;
+}
+h4 {
+  font-size: 16px;
+}
+th,
+td {
+  padding: 4px 16px 4px 0;
+
+  font-size: 14px;
+}
+input {
+  padding: 4px 8px;
+}
+button {
+  padding: 4px 12px;
+}
+#table-data {
+  width: 100%;
+
+  text-align: center;
+}
+#table-data tr th,
+#table-data tr td {
+  border: 1px solid #666666;
+}

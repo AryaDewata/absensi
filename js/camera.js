@@ -44,3 +44,15 @@ profileBtn.addEventListener("click", function () {
 profileWrapper.addEventListener("click", function () {
   this.style.display = "none";
 });
+
+// Success Toggle
+const successWrapper = document.querySelector(".success-wrapper");
+successWrapper.addEventListener("click", function () {
+  this.style.display = "none";
+});
+// Next Snapshot Result
+const nextBtn = document.querySelector("#next-btn");
+nextBtn.addEventListener("click", function () {
+  snapshotWrapper.style.display = "none";
+  successWrapper.style.display = "flex";
+});
