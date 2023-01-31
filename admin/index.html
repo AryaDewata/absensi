@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Data Siswa</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Sidebar -->
+        <section id="sidebar">
+            <img src="../img/logo.png" alt="logo smk ti bali global singaraja">
+            <div class="menu">
+                <a href="data-absensi.html">Data Absensi</a>
+                <a href="#">Data Siswa</a>
+                <a href="tambah-siswa.html">Tambah Siswa</a>
+            </div>
+        </section>
+
+        <!-- Main -->
+        <section id="main">
+
+            <!-- Filter Data -->
+            <div class="filter-data">
+                <label for="filter-kelas">Kelas</label>
+                <select id="filter-kelas">
+                    <option value="">X</option>
+                    <option value="">XI</option>
+                    <option value="">XII</option>
+                </select>
+                <label for="filter-jurusan">Jurusan</label>
+                <select id="filter-jurusan">
+                    <option value="">Multimedia</option>
+                    <option value="">Akuntansi Komputer</option>
+                    <option value="">Teknik Komputer dan Jaringan</option>
+                    <option value="">Rekayasa Perangkat Lunak</option>
+                </select>
+                <button class="btn">Filter <i class="fas fa-filter"></i></button>
+            </div>
+
+            <!-- Tabel Data Siswa -->
+            <table id="tabel-data-siswa">
+                <tr>
+                    <th>NIS</th>
+                    <th>Nama</th>
+                    <th>Kelas</th>
+                    <th>Jurusan</th>
+                    <th>Email Orang Tua</th>
+                    <th>PIN</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>906</td>
+                    <td>Made Arya Astawa</td>
+                    <td>11</td>
+                    <td>Rekayasa Perangkat Lunak</td>
+                    <td>arya@gmail.com</td>
+                    <td>hello, world!</td>
+                    <td><a href="edit-siswa.html" class="btn">Edit</a></td>
+                </tr>
+            </table>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>

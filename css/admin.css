@@ -1,0 +1,141 @@
+/* 
+<========= Google Fonts =========>
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* 
+<========= Documents =========>
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: "Poppins";
+}
+
+/* 
+<========= Body =========>
+*/
+body {
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+/* 
+<========= Container =========>
+*/
+.container {
+  width: 100%;
+  min-height: 100%;
+
+  display: flex;
+}
+
+/* 
+<========= Sidebar Section =========>
+*/
+#sidebar {
+  padding: 32px 0;
+  width: 14%;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  border-right: 2px solid rgb(20, 90, 135);
+  background: rgb(30, 125, 185);
+}
+#sidebar img {
+  width: 40%;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+
+  text-align: center;
+}
+.menu a {
+  padding: 8px 18px;
+  width: 100%;
+
+  border-radius: 6px;
+  background: rgba(0, 180, 250, 0.5);
+
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+  letter-spacing: 0.8px;
+}
+.menu a:hover {
+  background: rgb(0, 180, 250);
+}
+
+/* 
+<========= Main Section =========>
+*/
+#main {
+  padding: 32px;
+  width: 86%;
+  height: 100vh;
+
+  overflow-y: scroll;
+
+  background: rgb(245, 245, 245);
+}
+.filter-data {
+  padding: 12px 0;
+  display: flex;
+  gap: 12px;
+}
+td {
+  padding: 0 18px 6px 0;
+  font-size: 16px;
+}
+#tabel-data-siswa {
+  cursor: default;
+  width: 100%;
+
+  border-collapse: collapse;
+  background: white;
+
+  text-align: center;
+}
+#tabel-data-siswa tr:nth-child(odd) {
+  background: rgba(30, 125, 185, 0.2);
+}
+#tabel-data-siswa th,
+#tabel-data-siswa td {
+  padding: 8px 12px;
+
+  border: 1px solid rgb(20, 90, 135);
+
+  font-size: 12px;
+}
+#tabel-data-siswa th {
+  color: rgb(20, 90, 135);
+}
+#tabel-data-siswa tr td img {
+  max-width: 200px;
+}
+.btn {
+  cursor: pointer;
+  padding: 4px 12px;
+
+  border: none;
+  border-radius: 6px;
+  background: rgb(30, 125, 185);
+
+  color: white;
+  text-decoration: none;
+}
+.btn:hover {
+  background: rgba(30, 125, 185, 0.8);
+}
