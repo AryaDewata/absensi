@@ -139,3 +139,61 @@ td {
 .btn:hover {
   background: rgba(30, 125, 185, 0.8);
 }
+.btn-red {
+  background: rgb(255, 100, 100);
+}
+.btn-red-outline {
+  border: 1px solid rgb(255, 100, 100);
+  background: transparent;
+
+  color: rgb(255, 100, 100);
+}
+.btn-red:hover {
+  background: rgba(255, 100, 100, 0.8);
+}
+.btn-red-outline:hover {
+  border: 1px solid rgba(255, 100, 100, 0.8);
+  background: transparent;
+
+  color: rgba(255, 100, 100, 0.8);
+}
+
+/* 
+<========= Popups =========>
+*/
+.popups-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.5);
+}
+.card {
+  padding: 32px;
+
+  border-radius: 6px;
+  background: white;
+
+  text-align: center;
+}
+.card h4 {
+  color: #888888;
+}
+.option {
+  margin: 22px auto 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+.option .btn {
+  width: 200px;
+}

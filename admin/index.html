@@ -65,7 +65,7 @@
                     <th>Jurusan</th>
                     <th>Email Orang Tua</th>
                     <th>PIN</th>
-                    <th></th>
+                    <th colspan="2"></th>
                 </tr>
                 <tr>
                     <td>906</td>
@@ -75,12 +75,33 @@
                     <td>arya@gmail.com</td>
                     <td>hello, world!</td>
                     <td><a href="edit-siswa.html" class="btn">Edit</a></td>
+                    <td><a class="btn btn-red">Hapus</a></td>
                 </tr>
             </table>
 
         </section>
 
+        <!-- Popups -->
+        <div class="popups-wrapper">
+            <div class="card">
+                <h4>Hapus Made Arya Astawa dari database ?</h4>
+                <div class="option">
+                    <a href="#" class="btn btn-red-outline" id="btn-close-popups">Tidak</a>
+                    <a href="#" class="btn btn-red">Ya</a>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <!-- Javascript -->
+    <script>
+        const popups = document.querySelector('.popups-wrapper');
+        const closeBtn = document.querySelector('#btn-close-popups');
+        closeBtn.addEventListener('click', function () {
+            popups.style.display = "none";
+        })
+    </script>
 
 </body>
 
