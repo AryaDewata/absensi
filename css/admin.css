@@ -25,6 +25,44 @@ body {
 }
 
 /* 
+<========= Scrollbar =========>
+*/
+::-webkit-scrollbar {
+  width: 8px;
+  box-shadow: inset 0.1px 0.1px 3px rgba(0, 0, 0, 0.4);
+}
+::-webkit-scrollbar-corner {
+  border: 1px solid black;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* 
+<========= Form =========>
+*/
+label {
+  font-size: 14px;
+}
+input {
+  padding: 2px 6px;
+  width: 322px;
+
+  font-size: 14px;
+  letter-spacing: 0.4px;
+}
+select {
+  padding: 2px 6px;
+
+  font-size: 14px;
+  letter-spacing: 0.4px;
+}
+
+/* 
 <========= Container =========>
 */
 .container {
@@ -38,7 +76,7 @@ body {
 <========= Sidebar Section =========>
 */
 #sidebar {
-  padding: 32px 0;
+  padding: 28px 0;
   width: 14%;
 
   overflow: hidden;
@@ -46,9 +84,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
 
-  border-right: 2px solid rgb(20, 90, 135);
+  border-right: 1px solid rgb(20, 90, 135);
   background: rgb(30, 125, 185);
 }
 #sidebar img {
@@ -58,7 +96,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 22px;
+  gap: 16px;
 
   text-align: center;
 }
@@ -67,15 +105,15 @@ body {
   width: 100%;
 
   border-radius: 6px;
-  background: rgba(0, 180, 250, 0.5);
+  background: rgba(0, 180, 250, 0.4);
 
   color: white;
   font-size: 12px;
   text-decoration: none;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.4px;
 }
 .menu a:hover {
-  background: rgb(0, 180, 250);
+  background: rgba(0, 180, 250, 0.8);
 }
 
 /* 
@@ -91,9 +129,25 @@ body {
   background: rgb(245, 245, 245);
 }
 .filter-data {
-  padding: 12px 0;
+  margin-bottom: 18px;
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 14px;
+}
+.filter-data label {
+  color: rgb(20, 90, 135);
+  font-size: 14px;
+}
+.filter-data select {
+  outline: none;
+  border: 1px solid rgb(20, 90, 135);
+  border-radius: 6px;
+
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+}
+.filter-data select:focus {
+  box-shadow: 0 0 3px 0.1px rgb(30, 125, 185);
 }
 td {
   padding: 0 18px 6px 0;
@@ -107,9 +161,10 @@ td {
   background: white;
 
   text-align: center;
+  letter-spacing: 0.2px;
 }
 #tabel-data-siswa tr:nth-child(odd) {
-  background: rgba(30, 125, 185, 0.2);
+  background: rgba(30, 125, 185, 0.15);
 }
 #tabel-data-siswa th,
 #tabel-data-siswa td {
@@ -117,7 +172,7 @@ td {
 
   border: 1px solid rgb(20, 90, 135);
 
-  font-size: 12px;
+  font-size: 12.5px;
 }
 #tabel-data-siswa th {
   color: rgb(20, 90, 135);
@@ -140,60 +195,8 @@ td {
   background: rgba(30, 125, 185, 0.8);
 }
 .btn-red {
-  background: rgb(255, 100, 100);
-}
-.btn-red-outline {
-  border: 1px solid rgb(255, 100, 100);
-  background: transparent;
-
-  color: rgb(255, 100, 100);
+  background: rgb(255, 110, 110);
 }
 .btn-red:hover {
   background: rgba(255, 100, 100, 0.8);
-}
-.btn-red-outline:hover {
-  border: 1px solid rgba(255, 100, 100, 0.8);
-  background: transparent;
-
-  color: rgba(255, 100, 100, 0.8);
-}
-
-/* 
-<========= Popups =========>
-*/
-.popups-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-
-  width: 100vw;
-  height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: rgba(0, 0, 0, 0.5);
-}
-.card {
-  padding: 32px;
-
-  border-radius: 6px;
-  background: white;
-
-  text-align: center;
-}
-.card h4 {
-  color: #888888;
-}
-.option {
-  margin: 22px auto 0;
-
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-}
-.option .btn {
-  width: 200px;
 }

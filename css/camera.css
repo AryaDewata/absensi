@@ -44,11 +44,27 @@ body {
 }
 .back-btn {
   position: fixed;
-  top: 30px;
-  left: 30px;
+  top: 40px;
+  left: 40px;
 
-  font-size: 78px;
+  font-size: 52px;
   color: #005595;
+}
+@media (max-width: 768px) {
+  .back-btn {
+    top: 24px;
+    left: 24px;
+
+    font-size: 48px;
+  }
+}
+@media (max-width: 480px) {
+  .back-btn {
+    top: 18px;
+    left: 18px;
+
+    font-size: 38px;
+  }
 }
 
 /* 
@@ -59,7 +75,7 @@ body {
   top: 0;
   right: 0;
 
-  width: 180px;
+  width: 10%;
   height: 100%;
 
   display: flex;
@@ -72,14 +88,44 @@ body {
   backdrop-filter: blur(8px);
 }
 #action-menu .btn {
+  cursor: pointer;
+
   color: #005595;
-  font-size: 74px;
+  font-size: 52px;
+}
+@media (max-width: 768px) {
+  #action-menu {
+    width: 12%;
+  }
+  #action-menu .btn {
+    font-size: 42px;
+  }
+}
+@media (max-width: 480px) {
+  #action-menu {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 14%;
+
+    flex-direction: row-reverse;
+
+    border-top: 3px solid #005695;
+    border-left: none;
+  }
+  #action-menu .btn {
+    font-size: 38px;
+  }
 }
 
 /* 
 <========= Snapshot =========>
 */
 .snapshot-wrapper {
+  cursor: default;
   position: fixed;
   top: 0;
   left: 0;
@@ -95,11 +141,11 @@ body {
   backdrop-filter: blur(8px);
 }
 .card {
-  padding: 32px;
+  padding: 28px;
 
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
 
   border-radius: 6px;
   background: white;
@@ -108,11 +154,11 @@ body {
 }
 .card h3 {
   color: #888888;
-  font-size: 28px;
+  font-size: 18px;
 }
 #snapshot-result {
   margin: 0 auto;
-  width: 386px;
+  max-width: 340px;
   overflow: hidden;
 
   border-radius: 6px;
@@ -122,11 +168,12 @@ body {
 .card .option {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: 18px;
 }
 .card .option button {
-  padding: 12px 18px;
-  width: 292px;
+  cursor: pointer;
+  padding: 8px 16px;
+  width: 300px;
 
   border: 0;
   border-radius: 6px;
@@ -134,9 +181,14 @@ body {
   outline: none;
 
   color: white;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.6px;
+}
+.card .option button:hover,
+.card .option button:focus,
+.card .option button:active {
+  background: #0075c9;
 }
 .card .option button:nth-child(1) {
   border: 2px solid #005595;
@@ -144,11 +196,50 @@ body {
 
   color: #005595;
 }
+.card .option button:nth-child(1):hover,
+.card .option button:nth-child(1):focus,
+.card .option button:nth-child(1):active {
+  border: 2px solid #0075c9;
+
+  color: #0075c9;
+}
+@media (max-width: 768px) {
+  .card h3 {
+    font-size: 16px;
+  }
+  #snapshot-result {
+    max-width: 220px;
+  }
+  .card .option button {
+    width: 220px;
+
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .card h3 {
+    font-size: 14px;
+  }
+  #snapshot-result {
+    max-width: 220px;
+    max-height: 200px;
+  }
+  .card .option {
+    flex-direction: column;
+  }
+  .card .option button {
+    padding: 8px;
+    max-width: 220px;
+
+    font-size: 12px;
+  }
+}
 
 /* 
 <========= Success =========>
 */
 .success-wrapper {
+  cursor: pointer;
   position: fixed;
   top: 0;
   left: 0;
@@ -166,24 +257,54 @@ body {
   backdrop-filter: blur(8px);
 }
 .success-wrapper .card {
-  padding: 32px 128px;
-
-  font-size: 78px;
+  padding: 28px 82px;
 }
 .success-wrapper .card i {
+  font-size: 52px;
   color: #005595;
 }
 .success-wrapper p {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 1.2px;
+}
+@media (max-width: 768px) {
+  .success-wrapper .card i {
+    font-size: 42px;
+  }
+  .success-wrapper p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .success-wrapper .card {
+    padding: 22px 48px;
+  }
+  .success-wrapper .card i {
+    font-size: 42px;
+  }
+  .success-wrapper p {
+    font-size: 12px;
+  }
+}
+
+/* 
+<========= Profile Bottom =========>
+*/
+.profile-bottom {
+  display: none;
+  padding: 28px 16px;
+  width: 100%;
+
+  word-spacing: 6px;
 }
 
 /* 
 <========= Profile =========>
 */
 .profile-wrapper {
+  cursor: pointer;
   position: fixed;
   top: 0;
   left: 0;
@@ -202,13 +323,14 @@ body {
 }
 .profile-wrapper p {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 22px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 1.2px;
 }
 .profile {
-  padding: 32px;
+  padding: 28px;
   width: 50%;
+  max-height: 50%;
 
   display: flex;
 
@@ -221,7 +343,6 @@ body {
 
   display: flex;
   justify-content: center;
-  align-items: center;
 
   border-radius: 6px;
 }
@@ -229,7 +350,51 @@ body {
   padding: 0 16px;
   width: 50%;
 }
-.profile-wrapper .detail p {
+.profile-wrapper .detail table {
   color: #888888;
-  font-size: 18px;
+  font-size: 14px;
+}
+.profile-wrapper .detail table tr td {
+  padding: 4px 12px 0 0;
+}
+@media (max-width: 768px) {
+  .profile {
+    width: 70%;
+  }
+  .profile .picture {
+    width: 30%;
+  }
+  .detail {
+    padding: 0 8px;
+    width: 70%;
+  }
+  .profile-wrapper .detail table {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .profile-wrapper p {
+    font-size: 12px;
+  }
+  .profile {
+    padding: 18px;
+    width: 80%;
+    max-height: 50%;
+
+    flex-direction: column;
+    gap: 12px;
+  }
+  .profile .picture {
+    margin: 0 auto;
+    width: 80%;
+    height: 50%;
+  }
+  .detail {
+    padding: 0;
+    width: 100%;
+    height: 50%;
+  }
+  .profile-wrapper .detail table {
+    font-size: 12px;
+  }
 }

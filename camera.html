@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
     <!-- Title -->
-    <title>Layout</title>
+    <title>Kamera</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="https://img.icons8.com/clouds/512/todo-list.png" type="image/x-icon">
@@ -57,7 +57,7 @@
         <div class="success-wrapper">
             <div class="card">
                 <i class="fas fa-check-circle"></i>
-                <h3>Absensi Berhasil !</h3>
+                <h3>Absensi Berhasil!</h3>
             </div>
             <p>Klik pada layar untuk kembali</p>
         </div>
@@ -70,10 +70,24 @@
                         alt="">
                 </div>
                 <div class="detail">
-                    <p>NIS : 666</p>
-                    <p>Nama : Christina</p>
-                    <p>Kelas : XI</p>
-                    <p>Jurusan : Rekayasa Perangkat Lunak</p>
+                    <table>
+                        <tr>
+                            <td>NIS</td>
+                            <td>: 906</td>
+                        </tr>
+                        <tr>
+                            <td>Nama</td>
+                            <td>: Christina</td>
+                        </tr>
+                        <tr>
+                            <td>Kelas</td>
+                            <td>: XI</td>
+                        </tr>
+                        <tr>
+                            <td>Jurusan</td>
+                            <td>: Rekayasa Perangkat Lunak</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <p>Klik pada layar untuk kembali</p>
@@ -81,8 +95,81 @@
 
     </div>
 
+    <!-- Student Profile Bottom -->
+    <div class="profile-bottom">
+        <p>NIS : 906</p>
+        <p>Nama : Made Arya Astawa</p>
+        <p>Kelas : XI</p>
+        <p>Jurusan : Rekayasa Perangkat Lunak</p>
+    </div>
+
     <!-- Javascript -->
-    <script src="js/camera.js"></script>
+    <script>
+        // Camera Stream
+        const camera = document.querySelector("#camera");
+        let constraints = {
+            video: {
+                width: window.innerWidth,
+                height: window.innerHeight,
+                facingMode: {
+                    exact: "user",
+                },
+            },
+        };
+        async function init() {
+            let stream = await navigator.mediaDevices.getUserMedia(constraints);
+
+            var { width, height } = stream.getTracks()[0].getSettings();
+            document.querySelector("#snapshot-result").width = width;
+            document.querySelector("#snapshot-result").height = height;
+
+            handleSuccess(stream);
+        }
+        function handleSuccess(stream) {
+            window.stream = stream;
+            camera.srcObject = stream;
+        }
+        init();
+
+        // Snapshot
+        const snapshotBtn = document.querySelector("#snapshot-btn");
+        const snapshotWrapper = document.querySelector(".snapshot-wrapper");
+        const result = document.querySelector("#snapshot-result");
+        let context = result.getContext("2d");
+        snapshotBtn.addEventListener("click", function () {
+            context.drawImage(camera, 0, 0, camera.videoWidth, camera.videoHeight);
+            snapshotWrapper.style.display = "flex";
+        });
+        // Close Snapshot Result
+        const closeBtn = document.querySelector("#close-btn");
+        closeBtn.addEventListener("click", function () {
+            snapshotWrapper.style.display = "none";
+        });
+
+        // Profile Toggle
+        const profileBtn = document.querySelector("#profile-toggle");
+        const profileWrapper = document.querySelector(".profile-wrapper");
+
+        profileBtn.addEventListener("click", function () {
+            profileWrapper.style.display = "flex";
+        });
+        profileWrapper.addEventListener("click", function () {
+            this.style.display = "none";
+        });
+
+        // Success Toggle
+        const successWrapper = document.querySelector(".success-wrapper");
+        successWrapper.addEventListener("click", function () {
+            this.style.display = "none";
+        });
+        // Next Snapshot Result
+        const nextBtn = document.querySelector("#next-btn");
+        nextBtn.addEventListener("click", function () {
+            snapshotWrapper.style.display = "none";
+            successWrapper.style.display = "flex";
+        });
+
+    </script>
 
 </body>
 
