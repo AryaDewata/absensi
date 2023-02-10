@@ -108,26 +108,18 @@
                 },
             },
         };
-        alert(`video width: ${constraints.video.width}`)
-        alert(`video height: ${constraints.video.height}`)
-        alert(`inner width: ${window.innerWidth}`);
-        alert(`inner height: ${window.innerHeight}`);
-        async function init() {
-            let stream = await navigator.mediaDevices.getUserMedia(constraints);
-
-            var { width, height } = stream.getTracks()[0].getSettings();
-            document.querySelector("#snapshot-result").width = width;
-            document.querySelector("#snapshot-result").height = height;
-            alert(width);
-            alert(height);
-
-            handleSuccess(stream);
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia(constraints)
+                .then(function (stream) {
+                    camera.srcObject = stream;
+                    let { width, height } = stream.getTracks()[0].getSettings();
+                    document.querySelector("#snapshot-result").width = width;
+                    document.querySelector("#snapshot-result").height = height;
+                })
+                .catch(function (err) {
+                    console.log("Something went wrong!");
+                });
         }
-        function handleSuccess(stream) {
-            window.stream = stream;
-            camera.srcObject = stream;
-        }
-        init();
 
         // Snapshot
         const snapshotBtn = document.querySelector("#snapshot-btn");
