@@ -59,7 +59,7 @@ header img {
 }
 @media (max-width: 480px) {
   header {
-    font-size: 12px;
+    font-size: 14px;
   }
   header img {
     width: 68px;
@@ -160,7 +160,7 @@ input::placeholder {
     width: 82vw;
   }
   input {
-    font-size: 12px;
+    font-size: 14px;
   }
   input::placeholder {
     opacity: 50%;
@@ -169,7 +169,7 @@ input::placeholder {
     font-size: 14px;
   }
   .btn {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
