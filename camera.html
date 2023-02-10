@@ -108,12 +108,18 @@
                 },
             },
         };
+        alert(`video width: ${constraints.video.width}`)
+        alert(`video height: ${constraints.video.height}`)
+        alert(`inner width: ${window.innerWidth}`);
+        alert(`inner height: ${window.innerHeight}`);
         async function init() {
             let stream = await navigator.mediaDevices.getUserMedia(constraints);
 
             var { width, height } = stream.getTracks()[0].getSettings();
             document.querySelector("#snapshot-result").width = width;
             document.querySelector("#snapshot-result").height = height;
+            alert(width);
+            alert(height);
 
             handleSuccess(stream);
         }
