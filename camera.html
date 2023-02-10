@@ -97,6 +97,13 @@
 
     <!-- Javascript -->
     <script>
+        window.addEventListener("orientationchange", (event) => {
+            let rotasi = event.target.screen.orientation.angle;
+            if (rotasi == 0 || rotasi == 90 || rotasi == 180 || rotasi == 270) {
+                window.location.reload();
+            }
+        });
+
         // Camera Stream
         const camera = document.querySelector("#camera");
         let constraints = {
