@@ -290,17 +290,6 @@ body {
 }
 
 /* 
-<========= Profile Bottom =========>
-*/
-.profile-bottom {
-  display: none;
-  padding: 28px 16px;
-  width: 100%;
-
-  word-spacing: 6px;
-}
-
-/* 
 <========= Profile =========>
 */
 .profile-wrapper {
