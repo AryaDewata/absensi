@@ -45,7 +45,7 @@
         <div class="snapshot-wrapper">
             <div class="card">
                 <canvas id="snapshot-result"></canvas>
-                <h3>Lanjutkan ?</h3>
+                <h3>Lanjutkan proses absensi?</h3>
                 <div class="option">
                     <button id="close-btn">Ambil Ulang Gambar</button>
                     <button id="next-btn">Lanjutkan</button>
@@ -100,12 +100,11 @@
         // Camera Stream
         const camera = document.querySelector("#camera");
         let constraints = {
+            audio: false,
             video: {
                 width: window.innerWidth,
                 height: window.innerHeight,
-                facingMode: {
-                    exact: "user",
-                },
+                facingMode: "user",
             },
         };
         if (navigator.mediaDevices.getUserMedia) {
@@ -116,9 +115,9 @@
                     document.querySelector("#snapshot-result").width = width;
                     document.querySelector("#snapshot-result").height = height;
                 })
-                .catch(function (err) {
-                    console.log("Something went wrong!");
-                });
+                .catch(err => {
+                    throw err;
+                })
         }
 
         // Snapshot
@@ -158,7 +157,6 @@
             snapshotWrapper.style.display = "none";
             successWrapper.style.display = "flex";
         });
-
     </script>
 
 </body>

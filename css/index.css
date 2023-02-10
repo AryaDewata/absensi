@@ -160,7 +160,8 @@ input::placeholder {
     width: 82vw;
   }
   input {
-    font-size: 14px;
+    padding: 12px;
+    font-size: 16px;
   }
   input::placeholder {
     opacity: 50%;
