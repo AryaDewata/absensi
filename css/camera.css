@@ -112,6 +112,11 @@ body {
   }
 }
 @media (max-width: 480px) {
+  #action-menu {
+    padding: 50% 0;
+
+    align-items: start;
+  }
   #action-menu .btn {
     font-size: 42px;
   }
