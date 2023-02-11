@@ -37,8 +37,9 @@
 
         <!-- Action Button -->
         <section id="action-menu">
+            <i class="fas fa-camera-rotate btn" id="facing-toggle"></i>
             <i class="fas fa-camera btn" id="snapshot-btn"></i>
-            <i class="fas fa-user btn" id="profile-toggle"></i>
+            <i class="fas fa-user-circle btn" id="profile-toggle"></i>
         </section>
 
         <!-- Snapshot Popups -->
@@ -110,22 +111,37 @@
             audio: false,
             video: {
                 width: window.innerWidth,
-                height: window.innerHeight,
-                facingMode: "user",
+                // height: window.innerHeight,
+                facingMode: "user"
             },
         };
-        if (navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia(constraints)
-                .then(function (stream) {
-                    camera.srcObject = stream;
-                    let { width, height } = stream.getTracks()[0].getSettings();
-                    document.querySelector("#snapshot-result").width = width;
-                    document.querySelector("#snapshot-result").height = height;
-                })
-                .catch(err => {
-                    throw err;
-                })
+        function stream(constraints) {
+            if (navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia(constraints)
+                    .then(function (stream) {
+                        camera.srcObject = stream;
+                        let { width, height } = stream.getTracks()[0].getSettings();
+                        document.querySelector("#snapshot-result").width = width;
+                        document.querySelector("#snapshot-result").height = height;
+                    })
+                    .catch(err => {
+                        throw err;
+                    })
+            }
         }
+        stream(constraints);
+
+        // Facing mode Toggle
+        const facingBtn = document.querySelector('#facing-toggle');
+        facingBtn.addEventListener('click', function () {
+            if (constraints.video.facingMode == 'user') {
+                constraints.video.facingMode = 'environment';
+                stream(constraints);
+            } else {
+                constraints.video.facingMode = 'user';
+                stream(constraints);
+            }
+        })
 
         // Snapshot
         const snapshotBtn = document.querySelector("#snapshot-btn");
