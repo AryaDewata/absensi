@@ -131,18 +131,6 @@
         }
         stream(constraints);
 
-        // Facing mode Toggle
-        const facingBtn = document.querySelector('#facing-toggle');
-        facingBtn.addEventListener('click', function () {
-            if (constraints.video.facingMode == 'user') {
-                constraints.video.facingMode = 'environment';
-                stream(constraints);
-            } else {
-                constraints.video.facingMode = 'user';
-                stream(constraints);
-            }
-        })
-
         // Snapshot
         const snapshotBtn = document.querySelector("#snapshot-btn");
         const snapshotWrapper = document.querySelector(".snapshot-wrapper");
@@ -157,6 +145,22 @@
         closeBtn.addEventListener("click", function () {
             snapshotWrapper.style.display = "none";
         });
+
+        // Facing mode Toggle
+        const facingBtn = document.querySelector('#facing-toggle');
+        facingBtn.addEventListener('click', function () {
+            if (constraints.video.facingMode == 'user') {
+                constraints.video.facingMode = 'environment';
+                stream(constraints);
+                camera.style.transform = 'scaleX(1)';
+                result.style.transform = 'scaleX(1)';
+            } else {
+                constraints.video.facingMode = 'user';
+                stream(constraints);
+                camera.style.transform = 'scaleX(-1)';
+                result.style.transform = 'scaleX(-1)';
+            }
+        })
 
         // Profile Toggle
         const profileBtn = document.querySelector("#profile-toggle");
