@@ -135,7 +135,15 @@
         const result = document.querySelector("#snapshot-result");
         let context = result.getContext("2d");
         snapshotBtn.addEventListener("click", function () {
-            context.drawImage(camera, 0, 0, camera.videoWidth, camera.videoHeight);
+            context.save();
+            if (constraints.video.facingMode == "user") {
+                context.scale(-1, 1);
+                context.drawImage(camera, 0, 0, camera.videoWidth * -1, camera.videoHeight);
+            } else {
+                context.scale(1, 1);
+                context.drawImage(camera, 0, 0, camera.videoWidth, camera.videoHeight);
+            }
+            context.restore();
             snapshotWrapper.style.display = "flex";
         });
         // Close Snapshot Result
