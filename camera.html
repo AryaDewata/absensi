@@ -96,13 +96,6 @@
 
     <!-- Javascript -->
     <script>
-        // window.addEventListener("orientationchange", (event) => {
-        //     let rotasi = event.target.screen.orientation.angle;
-        //     if (rotasi == 0 || rotasi == 90 || rotasi == 180 || rotasi == 270) {
-        //         window.location.reload();
-        //     }
-        // });
-
         // Camera Stream
         const camera = document.querySelector("#camera");
         let constraints = {
@@ -139,7 +132,7 @@
             if (constraints.video.facingMode == "user") {
                 context.scale(-1, 1);
                 context.drawImage(camera, 0, 0, camera.videoWidth * -1, camera.videoHeight);
-            } else {
+            } else if (constraints.video.facingMode == "environment") {
                 context.scale(1, 1);
                 context.drawImage(camera, 0, 0, camera.videoWidth, camera.videoHeight);
             }
@@ -159,12 +152,10 @@
                 constraints.video.facingMode = 'environment';
                 stream(constraints);
                 camera.style.transform = 'scaleX(1)';
-                result.style.transform = 'scaleX(1)';
             } else {
                 constraints.video.facingMode = 'user';
                 stream(constraints);
                 camera.style.transform = 'scaleX(-1)';
-                result.style.transform = 'scaleX(-1)';
             }
         })
 

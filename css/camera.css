@@ -166,8 +166,6 @@ body {
   overflow: hidden;
 
   border-radius: 6px;
-
-  /* transform: scaleX(-1); */
 }
 .card button {
   cursor: pointer;
